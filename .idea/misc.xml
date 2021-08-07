@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/samet/AndroidStudioProjects/League_Fixture_Genarator/app/src/main/res/drawable-v24/download_back.xml" value="0.3828125" />
         <entry key="..\:/Users/samet/AndroidStudioProjects/League_Fixture_Genarator/app/src/main/res/layout/activity_main.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/samet/AndroidStudioProjects/League_Fixture_Genarator/app/src/main/res/layout/fragment_teams_list.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/samet/AndroidStudioProjects/League_Fixture_Genarator/app/src/main/res/layout/teams_list_item.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>
@@ -13,5 +15,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.36666666666666664" />
+      </ProjectState>
+    </option>
   </component>
 </project>

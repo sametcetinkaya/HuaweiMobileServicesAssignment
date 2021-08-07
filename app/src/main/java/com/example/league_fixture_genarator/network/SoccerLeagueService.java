@@ -13,8 +13,8 @@ public class SoccerLeagueService {
     public static Retrofit getClient(){
         if(retrofit == null){
             retrofit = new Retrofit.Builder()
-                    .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create())
                     .baseUrl(BASE_URL)
                     .build();
         }
