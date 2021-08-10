@@ -2,6 +2,8 @@ package com.example.league_fixture_genarator.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 public class LeagueTeams {
     @SerializedName("id")
     @Expose
@@ -16,15 +18,6 @@ public class LeagueTeams {
     public String getId() { return id; }
 
     public void setId(String id) { this.id = id; }
-
-    @Override
-    public String toString() {
-        return "LeagueTeams{" +
-                "id='" + id + '\'' +
-                ", teamName='" + teamName + '\'' +
-                ", teamAmblem='" + teamAmblem + '\'' +
-                '}';
-    }
 
     public String getTeamName() { return teamName; }
 

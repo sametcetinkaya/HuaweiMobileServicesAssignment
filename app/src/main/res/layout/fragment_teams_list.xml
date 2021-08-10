@@ -1,23 +1,26 @@
-<androidx.coordinatorlayout.widget.CoordinatorLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_content"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <Button
+        android:id="@+id/fixtureButton"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"
+        android:text="@string/fixture"/>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="@dimen/_50sdp"
-        android:layout_height="@dimen/_50sdp"
-        android:layout_gravity="bottom|right"
-        android:layout_margin="@dimen/_16sdp"
-      android:backgroundTint="#e74c3c"
-        android:src="@drawable/mix"
-        app:layout_anchor="@id/recyclerView"
-        app:layout_anchorGravity="bottom|right|end" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="@dimen/_30sdp"
+        android:id="@+id/recyclerViewTeams"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+
+
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+

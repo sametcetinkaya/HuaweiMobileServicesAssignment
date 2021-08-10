@@ -22,6 +22,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class TeamsRecyclerAdapter extends RecyclerView.Adapter<TeamsRecyclerAdapter.TeamsRecyclerViewHolder>{
     private static final String TAG = TeamsRecyclerAdapter.class.getSimpleName();
     private static Boolean DEBUG = true;
+
     private List<LeagueTeams> leagueTeams;
     private Context context;
 
@@ -45,10 +46,10 @@ public class TeamsRecyclerAdapter extends RecyclerView.Adapter<TeamsRecyclerAdap
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TeamsRecyclerAdapter.TeamsRecyclerViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull TeamsRecyclerAdapter.TeamsRecyclerViewHolder teamsHolder, int position) {
 
-        holder.soccerTeam.setText(leagueTeams.get(position).getTeamName());
-        Glide.with(context).load(leagueTeams.get(position).getTeamAmblem()).apply(RequestOptions.centerCropTransform()).into(holder.teamLogo);
+        teamsHolder.soccerTeam.setText(leagueTeams.get(position).getTeamName());
+        Glide.with(context).load(leagueTeams.get(position).getTeamAmblem()).apply(RequestOptions.centerCropTransform()).into(teamsHolder.teamLogo);
     }
 
     @Override
