@@ -14,7 +14,7 @@ news
 - Intuit
 - Animation
 
-<img src = "imageReadme/github-ss1.png" width="100">
+<img src = "imageReadme/ss1.png" width="100">
 ![Screenshot_1628771376](https://user-images.githubusercontent.com/38476364/129197667-46a8d4ec-bfc5-4899-898a-9858215a3a87.png)
 ![Screenshot_1628771382](https://user-images.githubusercontent.com/38476364/129197720-f3f8c90a-99dc-48a2-8b90-12143245f0a7.png)
 ![Screenshot_1628771401](https://user-images.githubusercontent.com/38476364/129197752-5c342983-4fee-473d-80e6-16c0fe3b5251.png)
