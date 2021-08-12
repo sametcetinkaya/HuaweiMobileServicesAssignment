@@ -14,3 +14,5 @@ news
 - Intuit
 - Animation
 
+https://github.com/sametcetinkaya/HuaweiMobileServicesAssignment/issues/6#issue-968736105
+
