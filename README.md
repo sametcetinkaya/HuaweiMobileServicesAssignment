@@ -2,7 +2,7 @@
 news
 # Architecture
 
--MVVM
+- MVVM
 <br />
 # Libraries
 
