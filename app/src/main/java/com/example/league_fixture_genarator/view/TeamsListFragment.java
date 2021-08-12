@@ -1,10 +1,13 @@
 package com.example.league_fixture_genarator.view;
 
 
+import android.content.res.Resources;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavDirections;
@@ -13,9 +16,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.TextView;
+
 import com.example.league_fixture_genarator.R;
 import com.example.league_fixture_genarator.adapter.TeamsRecyclerAdapter;
 import com.example.league_fixture_genarator.model.LeagueTeams;
@@ -32,7 +40,8 @@ public class TeamsListFragment extends Fragment {
     private TeamsViewModel teamsViewModel;
     private RecyclerView recyclerViewTeams;
     private ArrayList<LeagueTeams> leagueTeamsList = new ArrayList<>();
-    private Button fixtureButton;
+    private TextView fixtureButton;
+    private SwitchCompat switchCompat;
 
 
     @Override
@@ -49,6 +58,24 @@ public class TeamsListFragment extends Fragment {
 
         recyclerViewTeams = view.findViewById(R.id.recyclerViewTeams);
         fixtureButton = view.findViewById(R.id.fixtureButton);
+        switchCompat = view.findViewById(R.id.switch_button);
+        if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+            getActivity().setTheme(R.style.Theme_Dark);
+        }else{
+            getActivity().setTheme(R.style.Theme_Light);
+        }
+
+        switchCompat.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if(isChecked){
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                }
+                else{
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                }
+            }
+        });
 
         teamsViewModel = ViewModelProviders.of(this).get(TeamsViewModel.class);
         teamsViewModel.getTeamsViewModelCall();
@@ -90,5 +117,9 @@ public class TeamsListFragment extends Fragment {
         Log("goToSecond");
         NavDirections action = TeamsListFragmentDirections.actionTeamsListFragmentToFixtureListFragment();
         Navigation.findNavController(view).navigate(action);
+    }
+
+    private void CheckSwitch () {
+
     }
 }

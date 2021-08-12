@@ -1,16 +1,24 @@
 package com.example.league_fixture_genarator.model;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
+@Entity
 public class LeagueTeams {
+
     @SerializedName("id")
     @Expose
     private String id;
+
     @SerializedName("team_name")
     @Expose
     private String teamName;
+
     @SerializedName("team_amblem")
     @Expose
     private String teamAmblem;

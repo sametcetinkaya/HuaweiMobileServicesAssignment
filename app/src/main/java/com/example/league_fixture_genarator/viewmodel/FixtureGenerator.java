@@ -8,25 +8,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class FixtureGenerator {
-    private List<LeagueTeams> leagueTeams;
 
     public List<List<FixtureList>> getFixtures(List<String> teams, List<String> teamAmblem, boolean includeReverseFixtures) {
-        leagueTeams = new ArrayList<LeagueTeams>();
 
-/*        TeamsDaoInterface apiService = RetrofitClient.getClient().create(TeamsDaoInterface.class);
-        Call<List<Team>> call = apiService.getTeams();
-        call.enqueue(new Callback<List<Team>>() {
-            @Override
-            public void onResponse(Call<List<Team>> call, Response<List<Team>> response) {
-                teamList = response.body();
-                Log.d("TAG", "Response = " + teamList);
-            }
-
-            @Override
-            public void onFailure(Call<List<Team>> call, Throwable t) {
-                Log.d("TAG", "Response = " + t.toString());
-            }
-        });*/
         int numberOfTeams = teams.size();
 
         boolean ghostTeam = false;

@@ -56,6 +56,7 @@ public class TeamsViewModel extends ViewModel {
                     public void onNext(@NonNull ArrayList<LeagueTeams> leagueTeams) {
                         Log("LeagueTeamsOnNext" + leagueTeams);
                         leagueList.postValue(leagueTeams);
+                            //storeInSqlite(leagueTeams);
 
                     }
 
@@ -71,6 +72,12 @@ public class TeamsViewModel extends ViewModel {
 
                     }
                 });
+    }
+    private void showLeagueTeams(ArrayList<LeagueTeams> leagueTeams ){
+
+    }
+    private void storeInSqlite(ArrayList<LeagueTeams> list){
+
     }
 
     private static void Log(String message) {

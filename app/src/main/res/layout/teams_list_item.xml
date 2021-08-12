@@ -14,7 +14,8 @@
         android:id="@+id/relativeLy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical">
+        android:layout_gravity="center_vertical"
+        android:background="?attr/background_color">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/team_logo"
@@ -22,7 +23,8 @@
             android:layout_marginStart="@dimen/_9sdp"
             android:src="@drawable/logo"
             android:layout_height="@dimen/_60sdp"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            />
 
         <TextView
             android:id="@+id/team_name"
@@ -32,8 +34,8 @@
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
             android:fontFamily="sans-serif-light"
-            android:text="Galatasaray"
-            android:textColor="@android:color/black"
+            android:text="@string/galatasaray"
+            android:textColor="?attr/text_color"
             android:textSize="@dimen/_20ssp" />
 
 

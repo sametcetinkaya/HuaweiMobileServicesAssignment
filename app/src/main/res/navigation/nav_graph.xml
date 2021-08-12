@@ -7,15 +7,19 @@
     <fragment
         android:id="@+id/teamsListFragment"
         android:name="com.example.league_fixture_genarator.view.TeamsListFragment"
-        android:label="TeamsListFragment" >
+        android:label="TeamsListFragment">
         <action
             android:id="@+id/action_teamsListFragment_to_fixtureListFragment"
-            app:destination="@id/fixtureListFragment" />
+            app:destination="@id/fixtureListFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_left" />
     </fragment>
     <fragment
         android:id="@+id/fixtureListFragment"
         android:name="com.example.league_fixture_genarator.view.FixtureListFragment"
-        android:label="FixtureListFragment" >
+        android:label="FixtureListFragment">
         <action
             android:id="@+id/action_fixtureListFragment_to_teamsListFragment"
             app:destination="@id/teamsListFragment" />

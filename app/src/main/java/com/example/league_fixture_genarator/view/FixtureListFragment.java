@@ -9,8 +9,11 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.transition.Slide;
+import androidx.transition.TransitionManager;
 
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +24,7 @@ import com.example.league_fixture_genarator.adapter.TeamsFixtureRecyclerAdapter;
 import com.example.league_fixture_genarator.model.FixtureList;
 import com.example.league_fixture_genarator.model.LeagueTeams;
 import com.example.league_fixture_genarator.viewmodel.FixtureGenerator;
+import com.example.league_fixture_genarator.viewmodel.OnSwipeTouchListener;
 import com.example.league_fixture_genarator.viewmodel.TeamsViewModel;
 
 import java.util.ArrayList;
@@ -126,6 +130,62 @@ public class FixtureListFragment extends Fragment {
         LAST_PAGE = TOTAL_NUM_ITEMS / ITEMS_PER_PAGE;
         totalPages = TOTAL_NUM_ITEMS / ITEMS_PER_PAGE;
         recyclerViewFixture.setAdapter(new TeamsFixtureRecyclerAdapter(getContext(), generatePage(currentPage)));
+
+        recyclerViewFixture.setOnTouchListener(new OnSwipeTouchListener(getContext()) {
+
+            public void onSwipeRight() {
+                if (currentPage == totalPages) {
+                    currentPage -= 1;
+                    weekCounter.setText("Week "+String.valueOf(currentPage+1));
+                    Slide slide = new Slide();
+                    slide.setSlideEdge(Gravity.END);
+                    TransitionManager.beginDelayedTransition(recyclerViewFixture, slide);
+                    recyclerViewFixture.setAdapter(new TeamsFixtureRecyclerAdapter(getContext(), generatePage(currentPage)));
+
+
+                }else if (currentPage >= 1 && currentPage < totalPages) {
+                    currentPage -= 1;
+                    weekCounter.setText("Week "+String.valueOf(currentPage+1));
+                    Slide slide = new Slide();
+                    slide.setSlideEdge(Gravity.END);
+                    TransitionManager.beginDelayedTransition(recyclerViewFixture, slide);
+                    recyclerViewFixture.setAdapter(new TeamsFixtureRecyclerAdapter(getContext(), generatePage(currentPage)));
+
+                }else{
+
+                }
+            }
+            public void onSwipeLeft() {
+                if (currentPage == 0) {
+                    currentPage += 1;
+                    weekCounter.setText("Week "+String.valueOf(currentPage+1));
+
+                    Slide slide = new Slide();
+                    slide.setSlideEdge(Gravity.START);
+                    TransitionManager.beginDelayedTransition(recyclerViewFixture, slide);
+
+                    recyclerViewFixture.setAdapter(new TeamsFixtureRecyclerAdapter(getContext(), generatePage(currentPage)));
+
+                }else if (currentPage >= 1 && currentPage < totalPages) {
+                    currentPage += 1;
+                    if(currentPage == totalPages){
+                        weekCounter.setText("Week "+String.valueOf(currentPage));
+                    }else{
+                        weekCounter.setText("Week "+String.valueOf(currentPage+1));
+                    }
+
+                    Slide slide = new Slide();
+                    slide.setSlideEdge(Gravity.START);
+                    TransitionManager.beginDelayedTransition(recyclerViewFixture, slide);
+                    recyclerViewFixture.setAdapter(new TeamsFixtureRecyclerAdapter(getContext(), generatePage(currentPage)));
+
+                }
+
+                else{
+
+                }
+            }
+        });
     }
 
     public ArrayList<FixtureList> generatePage(int currentPage) {
