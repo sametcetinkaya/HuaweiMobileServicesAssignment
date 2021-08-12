@@ -29,10 +29,26 @@ news
      <br />
      
      <br />
+     
+     <br />
+     
+     <br />
+     
+     <br />
+     
+     <br />
      <img align="left"
      src = "imageReadme/ss3.png" width="150">
      <img align="left"
      src = "imageReadme/ss4.png" width="150">
+     <br />
+     
+     <br />
+     
+     <br />
+     
+     <br />
+     
      <br />
      
      <br />
