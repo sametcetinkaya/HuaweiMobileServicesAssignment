@@ -13,7 +13,7 @@
 
 # Libraries
 
-- Retrofit2/Gson
+- Retrofit2
 - RxJava2
 - Live Data
 - Navigation
