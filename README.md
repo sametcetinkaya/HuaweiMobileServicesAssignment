@@ -1,6 +1,10 @@
 # HuaweiMobileServicesAssignment
 
+<br />
+
 ## Soccer League Fixture Generator
+
+<br />
 
 # Architecture
 
